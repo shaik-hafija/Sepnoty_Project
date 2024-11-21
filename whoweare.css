@@ -1,0 +1,91 @@
+.container {
+    max-width: 1200px;
+  }
+
+  /* Section: Who We Are */
+  .who-we-are {
+    background: linear-gradient(135deg, #001f3f, #001c38);
+    padding: 50px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .who-we-are h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .who-we-are p {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+
+  .who-we-are .highlight {
+    font-weight: 600;
+    background: linear-gradient(to right, #00e3aa, #52b0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 50px 30px;
+  }
+
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .service-item {
+    background: #002c4e;
+    padding: 20px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .service-item i {
+    font-size: 2rem;
+  }
+
+  .service-item p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  /* Image Section */
+  .image-content img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    border: 6px solid #d66eff;
+    box-shadow: 0 4px 15px rgba(214, 110, 255, 0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .services-list {
+      grid-template-columns: 1fr;
+    }
+
+    .who-we-are h1 {
+      font-size: 2rem;
+    }
+
+    .who-we-are p {
+      font-size: 1rem;
+    }
+  }

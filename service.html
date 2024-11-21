@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Bootstrap Carousel with Tabbed Navigation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto:300,400,700">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f9f9f9;
+    }
+    .carousel {
+      margin: 30px 0;
+      background: #ccc;
+    }
+    .carousel .carousel-item {
+      text-align: center;
+      overflow: hidden;
+      height: 475px;
+    }
+    .carousel .carousel-item img {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .carousel-caption h3, .carousel-caption p {
+      color: #fff;
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      text-shadow: none;
+      margin-bottom: 20px;
+    }
+    .carousel-caption h3 {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 12px 24px;
+      font-size: 36px;
+      text-transform: uppercase;
+      border-radius: 5px;
+    }
+    .carousel-caption p {
+      background: rgba(32, 176, 185, 0.9);
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: 300;
+      border-radius: 5px;
+    }
+    .carousel .nav {
+      background: #eee;
+      padding: 10px 0;
+    }
+    .carousel .nav a {
+      color: #333;
+      border-radius: 0;
+      font-size: 85%;
+      padding: 10px 16px;
+      background: transparent;
+      text-align: center;
+    }
+    .carousel .nav .active a {
+      color: #fff;
+      background: #20b0b9;
+      border-radius: 3px;
+    }
+    .carousel .nav strong {
+      display: block;
+      font-family: 'Roboto', sans-serif;
+      font-size: 110%;
+      text-transform: uppercase;
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+      // Highlight bottom nav links
+      var clickEvent = false;
+      $("#myCarousel").on("click", ".nav a", function () {
+        clickEvent = true;
+        $(this).parent().siblings().removeClass("active");
+        $(this).parent().addClass("active");
+      }).on("slid.bs.carousel", function (e) {
+        if (!clickEvent) {
+          var itemIndex = $(e.relatedTarget).index();
+          var targetNavItem = $(".nav li[data-slide-to='" + itemIndex + "']");
+          $(".nav li").not(targetNavItem).removeClass("active");
+          targetNavItem.addClass("active");
+        }
+        clickEvent = false;
+      });
+    });
+  </script>
+</head>
+<body>
+<div class="container-lg">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://via.placeholder.com/800x400" alt="Slide 1">
+            <div class="carousel-caption">
+              <h3>Amazing Digital Experience</h3>
+              <p>Innovative solutions to boost your business performance.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/800x400" alt="Slide 2">
+            <div class="carousel-caption">
+              <h3>Live Monitoring Tools</h3>
+              <p>Stay updated with real-time monitoring and analytics.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/800x400" alt="Slide 3">
+            <div class="carousel-caption">
+              <h3>Attractive Pricing</h3>
+              <p>Affordable plans designed to suit your needs.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/800x400" alt="Slide 4">
+            <div class="carousel-caption">
+              <h3>Award-Winning Support</h3>
+              <p>24/7 support to assist you at every step.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel controls -->
+        <ol class="nav nav-pills nav-justified">
+          <li data-target="#myCarousel" data-slide-to="0" class="nav-item active">
+            <a href="#" class="nav-link"><strong>About</strong> Learn more about us</a>
+          </li>
+          <li data-target="#myCarousel" data-slide-to="1" class="nav-item">
+            <a href="#" class="nav-link"><strong>Features</strong> Explore unique tools</a>
+          </li>
+          <li data-target="#myCarousel" data-slide-to="2" class="nav-item">
+            <a href="#" class="nav-link"><strong>Pricing</strong> Choose your plan</a>
+          </li>
+          <li data-target="#myCarousel" data-slide-to="3" class="nav-item">
+            <a href="#" class="nav-link"><strong>Support</strong> Get in touch</a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

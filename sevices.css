@@ -1,0 +1,53 @@
+.carousel .carousel-item {
+    text-align: center;
+    overflow: hidden;
+    height: 475px;
+    background-color: #141A3A;
+  }
+  .carousel .carousel-item img {
+    max-width: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+  .carousel-caption h3 {
+    font-size: 36px;
+    font-weight: 600;
+    background: linear-gradient(to right, #6BEBA1, #20B0B9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+  .carousel-caption p {
+    font-size: 18px;
+    font-weight: 300;
+    color: #B0B9E0;
+  }
+  .pricing-section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .pricing-card {
+    background: #1F253A;
+    padding: 20px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  .pricing-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  .pricing-card .price {
+    font-size: 48px;
+    font-weight: 700;
+    color: #6BEBA1;
+  }
+  .btn-primary {
+    background: linear-gradient(to right, #6BEBA1, #20B0B9);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
